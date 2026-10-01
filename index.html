@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>3 Project Ideas for the Nebius × NVIDIA Global AI Hackathon | @aiwithunnati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light only;
+  --cream:#FAF3E6;
+  --cream-deep:#F1E6D0;
+  --red:#C0202C;
+  --red-dark:#8E1720;
+  --sage:#5C6B4D;
+  --black:#1A1A1A;
+  --muted:#5a534a;
+  --line:#e2d5bd;
+  --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+  --body:'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{color-scheme:light only;background:var(--cream);scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--black);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--red);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+
+/* HERO */
+.hero{background:var(--red);color:var(--cream);padding:56px 0 64px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-80px;bottom:-80px;width:280px;height:280px;border:40px solid rgba(250,243,230,.08);border-radius:50%}
+.byline{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;font-size:14px;margin-bottom:28px;opacity:.95}
+.byline strong{font-weight:700}
+.pill{display:inline-block;background:var(--cream);color:var(--red);font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(44px,9vw,86px);line-height:.98;margin:0 0 20px;letter-spacing:.5px;text-transform:uppercase}
+.hero p.lede{font-size:clamp(17px,2.4vw,20px);max-width:620px;margin:0 0 30px}
+.hero-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;max-width:700px}
+.fact{background:rgba(0,0,0,.18);border-radius:10px;padding:14px 16px}
+.fact b{display:block;font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.5px}
+.fact span{font-size:14px;opacity:.9}
+
+/* SECTIONS */
+section.block{background:var(--cream);padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,6vw,48px);line-height:1.05;margin:0 0 18px;text-transform:uppercase;letter-spacing:.4px}
+h3{font-size:19px;margin:30px 0 10px}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+
+.tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.track{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.track h4{margin:0 0 6px;font-size:16px}
+.track p{font-size:15px;margin:0;color:var(--muted)}
+.track.used{border:2px solid var(--red)}
+.track .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--red);margin-top:10px}
+
+table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border-radius:12px;overflow:hidden}
+.table-scroll{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:12px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--black);color:var(--cream);font-weight:700;font-size:14px}
+tr:last-child td{border-bottom:none}
+
+.callout{background:var(--sage);color:var(--cream);border-radius:12px;padding:20px 22px;margin:22px 0}
+.callout p:last-child{margin:0}
+.callout strong{color:#fff}
+
+ul.checks{list-style:none;padding:0;margin:14px 0}
+ul.checks li{position:relative;padding-left:28px;margin-bottom:9px}
+ul.checks li::before{content:"";position:absolute;left:0;top:8px;width:14px;height:14px;border:2px solid var(--red);border-radius:3px}
+
+/* PROJECTS */
+.project{background:var(--cream);padding:64px 0;border-bottom:1px solid var(--line)}
+.proj-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+.proj-num{font-family:var(--display);font-size:clamp(70px,14vw,120px);line-height:.8;color:var(--red);flex-shrink:0}
+.proj-head h2{margin:6px 0 10px}
+.track-badge{display:inline-block;background:var(--black);color:var(--cream);font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}
+.oneliner{font-size:19px;font-weight:500;border-left:4px solid var(--red);padding-left:16px;margin:22px 0}
+
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.stack span{background:var(--cream-deep);border:1px solid var(--line);font-size:14px;font-weight:500;padding:6px 12px;border-radius:8px}
+
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:16px 0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 18px 52px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:36px;height:36px;border-radius:50%;background:var(--red);color:var(--cream);font-family:var(--display);font-size:18px;display:flex;align-items:center;justify-content:center}
+ol.steps li:not(:last-child)::after{content:"";position:absolute;left:17px;top:38px;bottom:2px;width:2px;background:var(--line)}
+ol.steps b{display:block;margin-bottom:2px}
+
+.criteria{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0}
+.crit{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:15px}
+.crit b{display:block;color:var(--red);margin-bottom:4px}
+
+.flow{background:var(--black);color:var(--cream);border-radius:12px;padding:18px 20px;font-size:15px;overflow-x:auto;white-space:nowrap;margin:16px 0}
+.flow span{color:#ff8a8f;font-weight:700}
+
+/* FINAL */
+.final{background:var(--black);color:var(--cream);padding:60px 0}
+.final h2{color:var(--cream)}
+.final ul.checks li::before{border-color:#ff8a8f}
+.final a{color:#ff8a8f}
+.cta{display:inline-block;margin-top:18px;background:var(--red);color:var(--cream);text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px}
+.cta:hover{background:var(--red-dark)}
+
+footer{background:var(--red);color:var(--cream);padding:40px 0 46px;text-align:center}
+footer .name{font-family:var(--display);font-size:32px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:4px}
+footer .title{font-size:15px;margin-bottom:10px}
+footer a{color:var(--cream);font-weight:700}
+footer .copy{font-size:13px;opacity:.85;margin-top:18px}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .proj-head{flex-direction:column;gap:6px}
+  .hero{padding:40px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="byline"><strong>Unnati Tripathi</strong><span>@aiwithunnati</span><span>CEO &amp; Co-Founder, Maester Labs</span></div>
+    <div class="pill">Nebius × NVIDIA Global AI Hackathon</div>
+    <h1>3 Project Ideas That Can Win $50,000</h1>
+    <p class="lede">A build guide for the Nebius × NVIDIA Global AI Hackathon: what the judges want, which track each idea fits, and exactly how to build it.</p>
+    <div class="hero-facts">
+      <div class="fact"><b>$20,000</b><span>Grand prize, cash</span></div>
+      <div class="fact"><b>Oct 30</b><span>10:00 AM PT (10:30 PM IST)</span></div>
+      <div class="fact"><b>Online</b><span>Solo or team, free to enter</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <h2>The hackathon in 60 seconds</h2>
+    <p>Nebius and NVIDIA are running a two-month online hackathon on Devpost. You build a <strong>working app</strong> that runs on <strong>Nebius Token Factory or Nebius AI Cloud</strong> and uses <strong>at least one NVIDIA open-source model</strong> (like Nemotron), then submit it into one of four tracks.</p>
+
+    <div class="table-scroll">
+      <table>
+        <tr><th>Prize</th><th>Reward</th></tr>
+        <tr><td>Grand Prize</td><td>$20,000 USD</td></tr>
+        <tr><td>2nd Place</td><td>$10,000 USD</td></tr>
+        <tr><td>3rd Place</td><td>$6,000 USD</td></tr>
+        <tr><td>Each of the 4 track winners</td><td>NVIDIA Jetson Orin Nano</td></tr>
+        <tr><td>Best Use of Tavily (bonus)</td><td>$3,000 USD</td></tr>
+        <tr><td>Most Valuable Feedback</td><td>$100 USD + NVIDIA swag pack (10 winners)</td></tr>
+      </table>
+    </div>
+    <p class="muted">A project can win one Overall Award <em>or</em> one Track Award, plus one Bonus Award.</p>
+
+    <h3>The four tracks</h3>
+    <div class="tracks">
+      <div class="track used"><h4>Coding &amp; Agentic Engineering</h4><p>Coding agents and developer tools that write, run and test code in Token Factory.</p><span class="tag">Idea 01 goes here</span></div>
+      <div class="track used"><h4>Best Apps &amp; Agents</h4><p>Any app or agent people would actually use, powered by Nemotron on Token Factory.</p><span class="tag">Idea 03 goes here</span></div>
+      <div class="track used"><h4>Personal AI</h4><p>An always-on private assistant with persistent memory, skills and tools, with your data under your control.</p><span class="tag">Idea 02 goes here</span></div>
+      <div class="track"><h4>Physical AI</h4><p>Robotics, IoT and edge agents using Nemotron, GROOT, Cosmos and Sonic models.</p></div>
+    </div>
+
+    <h3>How judging works</h3>
+    <p>First, a pass/fail check: does your project genuinely fit its track and actually use the required Nebius + NVIDIA tools? Then four equally weighted criteria:</p>
+    <div class="criteria">
+      <div class="crit"><b>Technical implementation</b>How well it's built and how well it uses Token Factory / AI Cloud and NVIDIA models.</div>
+      <div class="crit"><b>Design</b>A complete product experience, not just a proof of concept.</div>
+      <div class="crit"><b>Potential impact</b>A specific real problem for a real audience, solved in the demo.</div>
+      <div class="crit"><b>Quality of idea</b>A creative, non-obvious use of the models that shows you understand the problem.</div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Pro tip:</strong> You're allowed multiple submissions as long as each one is substantially different. These three ideas sit in three different tracks, so you can build one, or go for all three.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 1 -->
+<section class="project" id="project-1">
+  <div class="wrap">
+    <div class="proj-head">
+      <div class="proj-num">01</div>
+      <div>
+        <h2>RL Environment for AI Agents</h2>
+        <span class="track-badge">Track: Coding &amp; Agentic Engineering</span>
+      </div>
+    </div>
+
+    <p class="oneliner">A training gym for coding agents: give an agent a broken repo, let it write and run code in a sandbox, and score it automatically with real tests.</p>
+
+    <h3>Why this can win</h3>
+    <p>Everyone is building agents. Very few people are building the place where agents <em>get better</em>. Reinforcement learning environments are how frontier labs train coding agents, so an open, reusable one built on Nemotron is a non-obvious idea that judges in this track will immediately understand.</p>
+
+    <h3>How it works</h3>
+    <div class="flow">Task (buggy repo) → <span>Agent</span> (Nemotron) → writes code → <span>Sandbox</span> runs it → <span>Tests</span> = reward → Leaderboard + trajectories</div>
+
+    <h3>Tech stack</h3>
+    <div class="stack">
+      <span>Nemotron Nano / Super (agent)</span><span>Nemotron 3 Ultra (judge)</span><span>Nebius Token Factory</span><span>Nebius Serverless Jobs</span><span>Python</span><span>Gymnasium-style API</span><span>Docker sandbox</span><span>pytest</span>
+    </div>
+
+    <h3>Build steps</h3>
+    <ol class="steps">
+      <li><b>Create the task set</b>Collect 20–50 small Python tasks, each with a bug and a hidden test file. Store them as JSON: repo files, task description, tests.</li>
+      <li><b>Write the environment</b>Build a Gymnasium-style class with <code>reset()</code> (load a task) and <code>step(action)</code> (agent edits a file or runs a command). Every action executes inside an isolated Docker container.</li>
+      <li><b>Define the reward</b>Reward = percentage of tests passed. Add small penalties for extra steps and for breaking tests that were already passing, so agents learn to be efficient.</li>
+      <li><b>Plug in the agent</b>Call Nemotron through the Token Factory API as the policy. Use Nemotron 3 Ultra as an optional judge that scores code quality on top of test results.</li>
+      <li><b>Scale with Serverless Jobs</b>Run many episodes in parallel on Nebius Serverless Jobs and save every trajectory (prompt, action, output, reward) to JSONL.</li>
+      <li><b>Build the dashboard</b>Show a leaderboard comparing models (Nano vs Super vs Ultra), pass rates per task, and a replay viewer for any episode.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Make it stand out:</strong> Export the saved trajectories as a ready-to-use training dataset. Now your environment doesn't just test agents, it produces the data to improve them.</p>
+    </div>
+
+    <h3>Demo video plan (under 3 minutes)</h3>
+    <ul class="checks">
+      <li>Show one task: the broken code and the failing tests.</li>
+      <li>Watch the agent attempt it live, step by step, in the replay viewer.</li>
+      <li>Show the reward and the leaderboard across three Nemotron models.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROJECT 2 -->
+<section class="project" id="project-2">
+  <div class="wrap">
+    <div class="proj-head">
+      <div class="proj-num">02</div>
+      <div>
+        <h2>Private Assistant With Persistent Memory</h2>
+        <span class="track-badge">Track: Personal AI</span>
+      </div>
+    </div>
+
+    <p class="oneliner">An always-on personal assistant that remembers you across every conversation, learns reusable skills, and keeps all your data under your control.</p>
+
+    <h3>Why this can win</h3>
+    <p>This is almost word-for-word what the Personal AI track asks for: persistent memory, reusable skills, access to tools you choose, and tasks across your daily workflow. The winning angle is <em>privacy you can see</em>, so build a memory panel where the user can view, edit and delete everything the assistant knows.</p>
+
+    <h3>How it works</h3>
+    <div class="flow">You → <span>Assistant</span> (Nemotron) → recalls from <span>Memory store</span> → uses <span>Skills + Tools</span> → acts → saves new memories</div>
+
+    <h3>Tech stack</h3>
+    <div class="stack">
+      <span>Nemotron on Token Factory</span><span>NVIDIA NemoClaw</span><span>OpenShell</span><span>Hermes Agent</span><span>Nebius Serverless</span><span>SQLite + vector index</span><span>Telegram or web chat UI</span>
+    </div>
+    <p class="muted">NemoClaw, OpenShell, Hermes Agent and Nebius Serverless are the tools the track itself suggests for assembling, securing and running your assistant.</p>
+
+    <h3>Build steps</h3>
+    <ol class="steps">
+      <li><b>Design the memory layers</b>Three types: <em>facts</em> (name, preferences), <em>episodes</em> (summaries of past chats), and <em>skills</em> (saved workflows like "plan my week"). Store them locally, encrypted.</li>
+      <li><b>Write and retrieve memories</b>After each chat, have Nemotron extract new facts and a short summary. Before each reply, retrieve the most relevant memories with vector search and add them to the prompt.</li>
+      <li><b>Add skills</b>Let the user say "save this as a skill." Store the steps as a reusable recipe the assistant can run again on command.</li>
+      <li><b>Connect tools</b>Give it access only to what the user chooses: calendar, notes, email, files. Run tool calls inside a sandboxed shell so nothing touches the system unchecked.</li>
+      <li><b>Make it always-on</b>Deploy on Nebius Serverless so it runs scheduled tasks, like a morning brief or a reminder, without you opening the app.</li>
+      <li><b>Build the memory panel</b>A simple page listing every stored memory, with edit and delete buttons. This is your privacy proof for the judges.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Make it stand out:</strong> Use Nemotron Nano for fast everyday replies and route only complex planning to Nemotron 3 Ultra. Show this routing in the demo, since the track rewards apps that stay responsive and stretch credits.</p>
+    </div>
+
+    <h3>Demo video plan (under 3 minutes)</h3>
+    <ul class="checks">
+      <li>First chat: tell it a few things about yourself and save a skill.</li>
+      <li>New session: it remembers you and runs the saved skill on command.</li>
+      <li>Open the memory panel, delete a memory, and show it's truly forgotten.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROJECT 3 -->
+<section class="project" id="project-3">
+  <div class="wrap">
+    <div class="proj-head">
+      <div class="proj-num">03</div>
+      <div>
+        <h2>Workflow That Generates Training Data</h2>
+        <span class="track-badge">Track: Best Apps &amp; Agents</span>
+      </div>
+    </div>
+
+    <p class="oneliner">Type a topic, get a clean, high-quality dataset ready for fine-tuning: generated, checked and filtered by Nemotron, end to end.</p>
+
+    <h3>Why this can win</h3>
+    <p>Good training data is the bottleneck for every team fine-tuning a model. A workflow that runs itself and produces usable datasets is a real product for a real audience, and it's eligible for the <strong>$3,000 Best Use of Tavily</strong> bonus if you pull fresh web sources with Tavily.</p>
+
+    <h3>How it works</h3>
+    <div class="flow">Topic → <span>Tavily</span> finds sources → <span>Nemotron Super</span> generates Q&amp;A pairs → <span>Nemotron 3 Ultra</span> grades + filters → dedupe → JSONL export</div>
+
+    <h3>Tech stack</h3>
+    <div class="stack">
+      <span>Nemotron Super (generator)</span><span>Nemotron 3 Ultra (grader)</span><span>Nebius Token Factory</span><span>Nebius Serverless Jobs</span><span>Tavily Search API</span><span>Python</span><span>Hugging Face Datasets</span>
+    </div>
+
+    <h3>Build steps</h3>
+    <ol class="steps">
+      <li><b>Collect seed sources</b>The user enters a topic (e.g. "Indian tax law for freelancers"). Tavily searches the web and returns fresh, relevant pages as grounding material.</li>
+      <li><b>Generate examples</b>Nemotron Super turns each source into instruction–response pairs in the format the user picks: Q&amp;A, chat, or reasoning with step-by-step answers.</li>
+      <li><b>Grade and filter</b>Nemotron 3 Ultra scores every example for accuracy against the source, helpfulness and clarity. Anything below the threshold is dropped or rewritten.</li>
+      <li><b>Clean the dataset</b>Remove near-duplicates, balance difficulty levels, and keep the source link on every example so it's traceable.</li>
+      <li><b>Run at scale</b>Move generation to Nebius Serverless Jobs so a 1,000-example dataset builds in the background while the user watches progress.</li>
+      <li><b>Export</b>Download as JSONL or push straight to Hugging Face, with a quality report showing scores and topic coverage.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Make it stand out:</strong> Close the loop. Fine-tune a small model on the generated dataset and show a before vs after answer in your demo. That proves the data actually works.</p>
+    </div>
+
+    <h3>Demo video plan (under 3 minutes)</h3>
+    <ul class="checks">
+      <li>Enter a topic and watch Tavily pull sources live.</li>
+      <li>Show generated examples, with rejected ones and their low scores.</li>
+      <li>Export the dataset and show the quality report.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Before you hit submit</h2>
+    <ul class="checks">
+      <li>App runs on Nebius Token Factory or Nebius AI Cloud and uses at least one NVIDIA open-source model.</li>
+      <li>Public GitHub, GitLab or Bitbucket repo with an open-source license (MIT, Apache 2.0 or MPL 2.0) visible in the About section.</li>
+      <li>README with setup steps that explains where you used Nemotron and how Token Factory helped.</li>
+      <li>Link to a working demo or hosted app that judges can test for free.</li>
+      <li>Demo video under 3 minutes, public on YouTube, with no copyrighted music.</li>
+      <li>Track selected, plus feedback on Nebius and NVIDIA tools (that feedback can win its own prize).</li>
+    </ul>
+    <p>Join the <a href="https://dev.nebius.com/builders" target="_blank" rel="noopener">Nebius Builder Program</a> for credits on Token Factory, Tavily and Nebius Academy, plus office hours and the builder community.</p>
+    <a class="cta" href="https://nebiusglobalaihackathon.devpost.com/" target="_blank" rel="noopener">Join the hackathon on Devpost</a>
+    <p style="margin-top:16px"><a href="https://nebiusglobalaihackathon.devpost.com/rules" target="_blank" rel="noopener">Read the official rules</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="name">Unnati Tripathi</div>
+    <div class="title">AI Educator &amp; Content Creator · CEO &amp; Co-Founder, Maester Labs</div>
+    <div><a href="https://instagram.com/aiwithunnati" target="_blank" rel="noopener">@aiwithunnati</a></div>
+    <div class="copy">© 2026 Unnati Tripathi. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
